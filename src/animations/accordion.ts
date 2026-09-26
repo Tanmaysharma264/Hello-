@@ -14,7 +14,6 @@ const EXPERIENCE = [
 ];
 
 const DETAIL = [
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   "Led end-to-end design across three concurrent brand launches.",
   "Collaborated with marketing and product teams on go-to-market visuals.",
   "Mentored two junior designers and set up the internal design system.",
@@ -42,7 +41,15 @@ function itemMarkup(item: (typeof EXPERIENCE)[number], index: number) {
   `;
 }
 
+function initExperienceLogos() {
+  const logos = document.getElementById("journeyLogos");
+  if (!logos) return;
+  logos.innerHTML = EXPERIENCE.map(() => `<span class="journey__logo-slot"></span>`).join("");
+}
+
 export function initAccordion() {
+  initExperienceLogos();
+
   const root = document.getElementById("accordion");
   if (!root) return;
 

@@ -80,51 +80,43 @@
     <section class="journey" id="journey">
       <h2 class="section-heading" data-reveal>My Journey &amp; Experience</h2>
 
-      <div class="journey__grid">
-        <div class="journey__left">
+      <div class="journey__wrap">
+        <div class="journey__top">
+          <img class="journey__portrait" src="assets/img/placeholder-portrait.svg" alt="Placeholder photo of Tanmay Sharma at work" />
           <div class="journey__about card">
-            <img class="journey__portrait" src="assets/img/placeholder-portrait.svg" alt="Placeholder photo of Tanmay Sharma at work" />
-            <div class="journey__about-copy">
-              <p class="eyebrow">About Me</p>
-              <p>
-                I'm Tanmay — a multidisciplinary designer who believes great
-                work should do more than look good, it should get remembered.
-                I've shaped brand identities, ad campaigns, merch and websites
-                across a range of industries, always chasing the same thing:
-                design that performs as well as it looks.
-              </p>
-            </div>
-          </div>
-
-          <div class="journey__stack">
-            <div class="card journey__stack-card">
-              <p class="eyebrow">Skills</p>
-              <ul class="tag-list">
-                <li>Brand Strategy</li>
-                <li>Art Direction</li>
-                <li>Video Editing</li>
-                <li>Motion Design</li>
-                <li>UI / UX Design</li>
-                <li>Typography</li>
-              </ul>
-            </div>
-            <div class="card journey__stack-card">
-              <p class="eyebrow">Tools &amp; Stacks</p>
-              <ul class="tag-list">
-                <li>Figma</li>
-                <li>Adobe Illustrator</li>
-                <li>Photoshop</li>
-                <li>Premiere Pro</li>
-                <li>After Effects</li>
-                <li>Webflow</li>
-              </ul>
-            </div>
+            <p class="eyebrow">About Me</p>
+            <p>
+              I'm Tanmay — a multidisciplinary designer who believes great
+              work should do more than look good, it should get remembered.
+              I've shaped brand identities, campaigns and websites across a
+              range of industries for clients who wanted to stand out.
+            </p>
           </div>
         </div>
 
-        <div class="journey__right">
-          <p class="eyebrow">My Experience</p>
-          <div class="accordion" id="accordion"></div>
+        <div class="journey__bottom">
+          <div class="journey__stack">
+            <div class="marquee-v card" id="toolsMarquee">
+              <p class="eyebrow marquee-v__label">Tools &amp; Stacks</p>
+              <div class="marquee-v__viewport">
+                <div class="marquee-v__track" id="toolsTrack"></div>
+              </div>
+            </div>
+            <div class="marquee-v card" id="skillsMarquee">
+              <p class="eyebrow marquee-v__label">Skills</p>
+              <div class="marquee-v__viewport">
+                <div class="marquee-v__track" id="skillsTrack"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="journey__right">
+            <div class="journey__exp-head">
+              <div class="journey__logos" id="journeyLogos" aria-hidden="true"></div>
+              <p class="eyebrow">My Experience</p>
+            </div>
+            <div class="accordion" id="accordion"></div>
+          </div>
         </div>
       </div>
     </section>

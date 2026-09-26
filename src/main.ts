@@ -3,6 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { initHero } from "./animations/hero";
 import { initMarquee } from "./animations/marquee";
+import { initVerticalMarquees } from "./animations/verticalMarquee";
 import { initAccordion } from "./animations/accordion";
 import { initStackedProjects } from "./animations/stackedProjects";
 import { initRevealHeadings } from "./animations/revealHeadings";
@@ -27,6 +28,7 @@ function init() {
   initNavShadow();
   initHero();
   initMarquee();
+  initVerticalMarquees();
   initAccordion();
   initStackedProjects();
   initRevealHeadings();
