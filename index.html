@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanmay Sharma — Creative & Design Portfolio</title>
+  <meta name="description" content="Tanmay Sharma — brand identity, advertisements, video editing, merch and website design." />
+  <link rel="icon" href="data:," />
+  <!-- Placeholder typeface (Fontshare, free) standing in for the brand font until it's supplied — swap in src/style.css --font-primary and the @font-face block. -->
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true">
+    <div class="grid-bg__lines"></div>
+  </div>
+
+  <header class="nav" id="nav">
+    <div class="nav__pill">
+      <a class="nav__brand" href="#top">
+        <span class="nav__avatar" aria-hidden="true"></span>
+        <span class="nav__name">Tanmay Sharma</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#top">Home</a>
+        <a href="#journey">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn--dark nav__cta" href="#contact">Contact Me</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__inner">
+        <a class="hero__photo" href="#contact" aria-label="About Tanmay Sharma">
+          <img src="/src/assets/img/placeholder-photo.svg" alt="Placeholder portrait of Tanmay Sharma" />
+        </a>
+        <p class="hero__tag">Hey, I am Tanmay</p>
+        <h1 class="hero__headline" data-reveal>
+          I craft bold brands and digital<br />
+          experiences that get noticed.
+        </h1>
+        <div class="hero__actions">
+          <a class="btn btn--accent" href="#contact">Hire Me</a>
+          <a class="btn btn--dark" href="#projects">See Work</a>
+        </div>
+      </div>
+
+      <div class="hero__video-spacer" id="heroVideoSpacer">
+        <div class="hero__video-stage" id="heroVideoStage">
+          <div class="hero__video-frame" id="heroVideoFrame">
+            <video
+              class="hero__video"
+              id="heroVideo"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="/src/assets/video/placeholder-poster.svg"
+            >
+              <!-- Drop the real reel in as src="/src/assets/video/reel.mp4" -->
+            </video>
+            <div class="hero__video-play" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M6 4L18 11L6 18V4Z" fill="currentColor"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUSTED BY -->
+    <section class="trusted" id="trusted">
+      <h2 class="trusted__heading" data-reveal>Trusted By Many Brands</h2>
+      <div class="marquee">
+        <div class="marquee__track" id="marqueeTrack">
+          <!-- duplicated in JS for seamless loop -->
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNEY & EXPERIENCE -->
+    <section class="journey" id="journey">
+      <h2 class="section-heading" data-reveal>My Journey &amp; Experience</h2>
+
+      <div class="journey__grid">
+        <div class="journey__left">
+          <div class="journey__about card">
+            <img class="journey__portrait" src="/src/assets/img/placeholder-portrait.svg" alt="Placeholder photo of Tanmay Sharma at work" />
+            <div class="journey__about-copy">
+              <p class="eyebrow">About Me</p>
+              <p>
+                I'm Tanmay — a multidisciplinary designer who believes great
+                work should do more than look good, it should get remembered.
+                I've shaped brand identities, ad campaigns, merch and websites
+                across a range of industries, always chasing the same thing:
+                design that performs as well as it looks.
+              </p>
+            </div>
+          </div>
+
+          <div class="journey__stack">
+            <div class="card journey__stack-card">
+              <p class="eyebrow">Skills</p>
+              <ul class="tag-list">
+                <li>Brand Strategy</li>
+                <li>Art Direction</li>
+                <li>Video Editing</li>
+                <li>Motion Design</li>
+                <li>UI / UX Design</li>
+                <li>Typography</li>
+              </ul>
+            </div>
+            <div class="card journey__stack-card">
+              <p class="eyebrow">Tools &amp; Stacks</p>
+              <ul class="tag-list">
+                <li>Figma</li>
+                <li>Adobe Illustrator</li>
+                <li>Photoshop</li>
+                <li>Premiere Pro</li>
+                <li>After Effects</li>
+                <li>Webflow</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="journey__right">
+          <p class="eyebrow">My Experience</p>
+          <div class="accordion" id="accordion"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS & PORTFOLIO -->
+    <section class="projects" id="projects">
+      <h2 class="section-heading" data-reveal>Projects &amp; Portfolio</h2>
+
+      <div class="projects__stack" id="projectsStack">
+        <div class="projects__media" id="projectsMedia">
+          <!-- images injected by stackedProjects.ts -->
+        </div>
+        <div class="projects__list" id="projectsList">
+          <!-- rows injected by stackedProjects.ts -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER / LAST SECTION -->
+  <footer class="footer" id="contact">
+    <div class="footer__inner">
+      <h2 class="footer__headline" data-reveal>Let's build your next great project</h2>
+      <p class="footer__sub">
+        Have a brand, campaign or product that deserves better design?
+        Let's collaborate and turn your idea into something unforgettable.
+      </p>
+      <a class="btn btn--light footer__cta" href="mailto:hello@tanmaysharma.com">
+        Start a project
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <div class="footer__meta">
+        <div>
+          <p class="eyebrow">Email Address</p>
+          <a href="mailto:hello@tanmaysharma.com">hello@tanmaysharma.com</a>
+        </div>
+        <div>
+          <p class="eyebrow">Phone Number</p>
+          <a href="tel:+910000000000">+91 00000 00000</a>
+        </div>
+        <div>
+          <p class="eyebrow">Social Links</p>
+          <div class="footer__socials">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="LinkedIn">LI</a>
+            <a href="#" aria-label="Behance">BE</a>
+          </div>
+        </div>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#top">Home</a>
+        <a href="#journey">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="footer__wordmark" aria-hidden="true">Tanmay Sharma</div>
+  </footer>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
