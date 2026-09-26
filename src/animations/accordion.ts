@@ -23,9 +23,12 @@ function itemMarkup(item: (typeof EXPERIENCE)[number], index: number) {
   return `
     <div class="accordion__item" data-index="${index}">
       <button class="accordion__trigger" aria-expanded="false">
-        <span>
-          <span class="accordion__title">${item.title}</span>
-          <span class="accordion__company">${item.company}</span>
+        <span class="accordion__lead">
+          <span class="accordion__logo" aria-hidden="true"></span>
+          <span class="accordion__text">
+            <span class="accordion__title">${item.title}</span>
+            <span class="accordion__company">${item.company}</span>
+          </span>
         </span>
         <span class="accordion__meta">
           <span class="accordion__date">${item.date}</span>
@@ -41,15 +44,7 @@ function itemMarkup(item: (typeof EXPERIENCE)[number], index: number) {
   `;
 }
 
-function initExperienceLogos() {
-  const logos = document.getElementById("journeyLogos");
-  if (!logos) return;
-  logos.innerHTML = EXPERIENCE.map(() => `<span class="journey__logo-slot"></span>`).join("");
-}
-
 export function initAccordion() {
-  initExperienceLogos();
-
   const root = document.getElementById("accordion");
   if (!root) return;
 
