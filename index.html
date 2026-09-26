@@ -6,9 +6,10 @@
   <title>Tanmay Sharma — Creative & Design Portfolio</title>
   <meta name="description" content="Tanmay Sharma — brand identity, advertisements, video editing, merch and website design." />
   <link rel="icon" href="data:," />
-  <!-- Placeholder typeface (Fontshare, free) standing in for the brand font until it's supplied — swap in src/style.css --font-primary and the @font-face block. -->
-  <link rel="preconnect" href="https://api.fontshare.com" />
-  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+  <!-- Placeholder typeface (Google Fonts, free) standing in for the brand font until it's supplied — swap in src/style.css --font-primary and the @font-face block. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/src/style.css" />
 </head>
 <body>
@@ -37,7 +38,7 @@
     <section class="hero" id="hero">
       <div class="hero__inner">
         <a class="hero__photo" href="#contact" aria-label="About Tanmay Sharma">
-          <img src="/src/assets/img/placeholder-photo.svg" alt="Placeholder portrait of Tanmay Sharma" />
+          <img src="assets/img/placeholder-photo.svg" alt="Placeholder portrait of Tanmay Sharma" />
         </a>
         <p class="hero__tag">Hey, I am Tanmay</p>
         <h1 class="hero__headline" data-reveal>
@@ -60,9 +61,9 @@
               loop
               playsinline
               preload="metadata"
-              poster="/src/assets/video/placeholder-poster.svg"
+              poster="assets/video/placeholder-poster.svg"
             >
-              <!-- Drop the real reel in as src="/src/assets/video/reel.mp4" -->
+              <!-- Drop the real reel in as src="assets/video/reel.mp4" -->
             </video>
             <div class="hero__video-play" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M6 4L18 11L6 18V4Z" fill="currentColor"/></svg>
@@ -89,7 +90,7 @@
       <div class="journey__grid">
         <div class="journey__left">
           <div class="journey__about card">
-            <img class="journey__portrait" src="/src/assets/img/placeholder-portrait.svg" alt="Placeholder photo of Tanmay Sharma at work" />
+            <img class="journey__portrait" src="assets/img/placeholder-portrait.svg" alt="Placeholder photo of Tanmay Sharma at work" />
             <div class="journey__about-copy">
               <p class="eyebrow">About Me</p>
               <p>

@@ -25,7 +25,7 @@ function rowMarkup(p: (typeof PROJECTS)[number], i: number) {
 }
 
 function imgMarkup(p: (typeof PROJECTS)[number], i: number) {
-  return `<img data-index="${i}" src="/src/assets/img/placeholder-project-${p.slug}.svg" alt="${p.title} placeholder" class="${i === 0 ? "is-active" : ""}" />`;
+  return `<img data-index="${i}" src="assets/img/placeholder-project-${p.slug}.svg" alt="${p.title} placeholder" class="${i === 0 ? "is-active" : ""}" />`;
 }
 
 export function initStackedProjects() {
