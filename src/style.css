@@ -2,7 +2,7 @@
    Design tokens — swap these to re-skin the whole site later.
    ========================================================================== */
 :root {
-  --font-primary: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-primary: "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   --bg: #ffffff;
   --bg-raised: #ffffff;
@@ -12,10 +12,10 @@
   --grey-100: #eef1f6;
   --grey-200: #dfe4ec;
   --grey-600: #767c88;
-  --blue: #2f5df6;
-  --blue-light: #6f8bff;
-  --blue-deep: #1a2b8a;
-  --blue-tint: #eef2ff;
+  --blue: #2f86ff;
+  --blue-light: #7fbaff;
+  --blue-deep: #0b3a91;
+  --blue-tint: #eaf3ff;
 
   --grid-line: rgba(20, 22, 26, 0.07);
 
@@ -189,7 +189,7 @@ main, header, footer { position: relative; z-index: 1; }
   height: 84px;
   border-radius: var(--radius-md);
   background: linear-gradient(160deg, var(--blue), var(--blue-light));
-  box-shadow: 0 20px 40px -10px rgba(47, 93, 246, 0.45);
+  box-shadow: 0 20px 40px -10px rgba(47, 134, 255, 0.45);
   overflow: hidden;
   margin-bottom: 1.5rem;
 }
