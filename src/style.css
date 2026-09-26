@@ -4,7 +4,7 @@
 :root {
   --font-primary: "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  --bg: #ffffff;
+  --bg: #f5f5f5;
   --bg-raised: #ffffff;
   --bg-card: #f4f6fb;
   --ink: #10131a;
@@ -362,6 +362,10 @@ main, header, footer { position: relative; z-index: 1; }
 .journey__right {
   display: flex;
   flex-direction: column;
+  background: var(--bg-raised);
+  border: 1px solid var(--grid-line);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
 }
 .journey__exp-head {
   margin-bottom: 1.25rem;
@@ -386,9 +390,9 @@ main, header, footer { position: relative; z-index: 1; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 0.9rem;
-  margin: 0 -0.9rem;
-  width: calc(100% + 1.8rem);
+  padding: 1.25rem 1.75rem;
+  margin: 0 -1.75rem;
+  width: calc(100% + 3.5rem);
   text-align: left;
   gap: 1rem;
   border-radius: var(--radius-sm);
@@ -432,7 +436,7 @@ main, header, footer { position: relative; z-index: 1; }
   overflow: hidden;
 }
 .accordion__panel-inner {
-  padding: 0 0.9rem 1.25rem calc(40px + 0.9rem + 0.9rem);
+  padding: 0 1.75rem 1.25rem calc(40px + 0.9rem + 1.75rem);
   color: var(--ink-soft);
   font-size: 0.95rem;
   line-height: 1.7;
