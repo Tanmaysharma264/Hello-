@@ -311,7 +311,13 @@ main, header, footer { position: relative; z-index: 1; }
   display: grid;
   grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.4fr);
   gap: clamp(1.5rem, 3vw, 2.5rem);
-  align-items: stretch;
+  /* start, not stretch: the experience column must size to its own
+     content only. With stretch, grid pulls it up to match the tools/
+     skills column's unclipped natural content height, which the JS
+     height-sync below would then read back and re-lock in — a
+     feedback loop that inflates both columns the more marquee items
+     there are. */
+  align-items: start;
 }
 .journey__stack {
   /* Height is set in px by journeyLayout.ts to match the experience

@@ -1,7 +1,39 @@
 import gsap from "gsap";
 
-const TOOLS = ["Figma", "Adobe Illustrator", "Photoshop", "Premiere Pro", "After Effects", "Webflow"];
-const SKILLS = ["Brand Strategy", "Art Direction", "Video Editing", "Motion Design", "UI / UX Design", "Typography"];
+const TOOLS = [
+  "Figma",
+  "Adobe Illustrator",
+  "Adobe Photoshop",
+  "Premiere Pro",
+  "After Effects",
+  "Webflow",
+  "Adobe XD",
+  "Sketch",
+  "Blender",
+  "Canva",
+  "Notion",
+  "Framer",
+  "InDesign",
+  "Cinema 4D",
+  "DaVinci Resolve",
+];
+const SKILLS = [
+  "Brand Strategy",
+  "Art Direction",
+  "Video Editing",
+  "Motion Design",
+  "UI / UX Design",
+  "Typography",
+  "Copywriting",
+  "Photography",
+  "Illustration",
+  "Social Media Design",
+  "Packaging Design",
+  "Print Design",
+  "Color Theory",
+  "Storyboarding",
+  "Campaign Strategy",
+];
 
 function itemMarkup(label: string) {
   return `<div class="marquee-v__item">${label}</div>`;

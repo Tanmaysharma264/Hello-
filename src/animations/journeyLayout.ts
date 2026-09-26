@@ -1,8 +1,10 @@
 // The tools/skills column's height must exactly match the experience
 // accordion's rendered height, split 50/50 between the two marquees.
 // CSS grid "stretch" + height:100% doesn't reliably resolve to a pixel
-// value here (varies with font load timing), so it's pinned with JS
-// instead — the one thing guaranteed to match reality.
+// value here, so it's pinned with JS instead. A ResizeObserver (rather
+// than a handful of fixed-delay retries) keeps it correct permanently —
+// whenever the accordion's real size changes for any reason (a slow
+// font swap, a resize, anything), the sync re-fires automatically.
 export function initJourneyLayout() {
   const stack = document.querySelector<HTMLElement>(".journey__stack");
   const right = document.querySelector<HTMLElement>(".journey__right");
@@ -21,10 +23,16 @@ export function initJourneyLayout() {
   };
 
   sync();
-  requestAnimationFrame(sync);
+
+  if (typeof ResizeObserver !== "undefined") {
+    const observer = new ResizeObserver(() => sync());
+    observer.observe(right);
+  } else {
+    // Fallback for browsers without ResizeObserver.
+    requestAnimationFrame(sync);
+    setTimeout(sync, 400);
+    document.fonts?.ready?.then(sync).catch(() => {});
+  }
+
   window.addEventListener("resize", sync);
-  document.fonts?.ready?.then(sync).catch(() => {});
-  // Images (portrait, logos) and any late layout shifts can still land
-  // after the above; one more pass covers it without a lingering loop.
-  setTimeout(sync, 400);
 }
