@@ -31,7 +31,6 @@ function initHeroEntrance() {
 function initHeroVideoZoom() {
   const spacer = document.getElementById("heroVideoSpacer");
   const frame = document.getElementById("heroVideoFrame");
-  const video = document.getElementById("heroVideo") as HTMLVideoElement | null;
   if (!spacer || !frame) return;
 
   gsap.set(frame, { borderRadius: 32 });
@@ -41,26 +40,27 @@ function initHeroVideoZoom() {
     return { width, height: (width * 9) / 16 };
   };
 
+  // Growth (zoom to fullscreen) finishes partway through the scroll
+  // distance; the rest is a held fullscreen beat before the next
+  // section takes over, so the cover image actually registers as
+  // "full screen" instead of instantly handing off.
+  const GROW_FRACTION = 0.5;
+  const MAX_DRIFT = 48; // px of downward parallax drift while zooming
+
   ScrollTrigger.create({
     trigger: spacer,
     start: "top top",
     end: "bottom bottom",
-    scrub: 0.6,
+    scrub: 1,
     onUpdate: (self) => {
-      const p = self.progress;
+      const growP = Math.min(1, self.progress / GROW_FRACTION);
+      const eased = gsap.parseEase("power2.out")(growP);
       const start = naturalSize();
-      const width = gsap.utils.interpolate(start.width, window.innerWidth, p);
-      const height = gsap.utils.interpolate(start.height, window.innerHeight, p);
-      const radius = gsap.utils.interpolate(32, 0, p);
-      gsap.set(frame, { width, height, borderRadius: radius });
-
-      if (video) {
-        if (p > 0.92 && video.paused) {
-          video.play().catch(() => {});
-        } else if (p <= 0.92 && !video.paused) {
-          video.pause();
-        }
-      }
+      const width = gsap.utils.interpolate(start.width, window.innerWidth, eased);
+      const height = gsap.utils.interpolate(start.height, window.innerHeight, eased);
+      const radius = gsap.utils.interpolate(32, 0, eased);
+      const drift = MAX_DRIFT * Math.sin(eased * Math.PI);
+      gsap.set(frame, { width, height, borderRadius: radius, y: drift });
     },
   });
 }

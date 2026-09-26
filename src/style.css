@@ -191,7 +191,7 @@ main, header, footer { position: relative; z-index: 1; }
 .hero__actions .btn { will-change: transform, opacity; }
 
 .hero__video-spacer {
-  height: 220vh;
+  height: 260vh;
   position: relative;
   margin-top: clamp(1.5rem, 3.5vh, 2.5rem);
 }
@@ -209,7 +209,7 @@ main, header, footer { position: relative; z-index: 1; }
   background: linear-gradient(160deg, var(--grey-200), var(--grey-100));
   overflow: hidden;
   box-shadow: 0 40px 80px -30px rgba(20, 22, 26, 0.25);
-  will-change: width, height, border-radius;
+  will-change: width, height, border-radius, transform;
 }
 .hero__video {
   width: 100%;
@@ -218,21 +218,6 @@ main, header, footer { position: relative; z-index: 1; }
   display: block;
   background: var(--grey-200);
 }
-.hero__video-play {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--ink);
-  pointer-events: none;
-}
-
 /* ==========================================================================
    Trusted by / marquee
    ========================================================================== */

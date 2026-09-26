@@ -50,20 +50,17 @@
       <div class="hero__video-spacer" id="heroVideoSpacer">
         <div class="hero__video-stage" id="heroVideoStage">
           <div class="hero__video-frame" id="heroVideoFrame">
-            <video
+            <!--
+              Placeholder cover image standing in for the reel until a real
+              video is supplied. Swap this <img> back for a <video muted
+              loop playsinline> once the reel is ready.
+            -->
+            <img
               class="hero__video"
               id="heroVideo"
-              muted
-              loop
-              playsinline
-              preload="metadata"
-              poster="assets/video/placeholder-poster.svg"
-            >
-              <!-- Drop the real reel in as src="assets/video/reel.mp4" -->
-            </video>
-            <div class="hero__video-play" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M6 4L18 11L6 18V4Z" fill="currentColor"/></svg>
-            </div>
+              src="assets/img/hero-cover.webp"
+              alt="Placeholder cover for the showreel"
+            />
           </div>
         </div>
       </div>
