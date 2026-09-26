@@ -6,7 +6,8 @@ function initHeroEntrance() {
   const tag = document.getElementById("heroTag");
   const headline = document.getElementById("heroHeadline");
   const actions = document.getElementById("heroActions");
-  if (!photo || !tag || !headline || !actions) return;
+  const stage = document.getElementById("heroVideoStage");
+  if (!photo || !tag || !headline || !actions || !stage) return;
 
   const lines = Array.from(headline.querySelectorAll<HTMLElement>(".hero__line"));
   lines.forEach((line) => {
@@ -19,13 +20,18 @@ function initHeroEntrance() {
   gsap.set(tag, { autoAlpha: 0, y: 14 });
   gsap.set(lineInner, { yPercent: 110 });
   gsap.set(buttons, { autoAlpha: 0, y: 18 });
+  // Slide-up is applied to the stage wrapper, not the frame itself —
+  // the frame's own transform is owned by the scroll-zoom below, so
+  // keeping the entrance on a separate element avoids the two fighting.
+  gsap.set(stage, { autoAlpha: 0, y: 60 });
 
   const tl = gsap.timeline({ defaults: { ease: "power4.out" }, delay: 0.15 });
 
   tl.to(photo, { autoAlpha: 1, scale: 1, rotate: 0, duration: 1, ease: "back.out(1.6)" })
     .to(tag, { autoAlpha: 1, y: 0, duration: 0.6 }, "-=0.55")
     .to(lineInner, { yPercent: 0, duration: 1, stagger: 0.12 }, "-=0.35")
-    .to(buttons, { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.1 }, "-=0.5");
+    .to(buttons, { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.1 }, "-=0.5")
+    .to(stage, { autoAlpha: 1, y: 0, duration: 0.9 }, "-=0.4");
 }
 
 function initHeroVideoZoom() {

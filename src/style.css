@@ -447,7 +447,7 @@ main, header, footer { position: relative; z-index: 1; }
   position: relative;
   margin-top: clamp(4rem, 8vh, 6rem);
   padding: clamp(4rem, 10vh, 7rem) var(--gutter) 0;
-  background: var(--ink);
+  background: var(--blue-deep);
   color: #fff;
   overflow: hidden;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
