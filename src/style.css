@@ -4,19 +4,20 @@
 :root {
   --font-primary: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  --bg: #f7f7f4;
+  --bg: #ffffff;
   --bg-raised: #ffffff;
-  --ink: #14161a;
-  --ink-soft: #4a4d55;
-  --grey-100: #eeeeea;
-  --grey-200: #e2e2dc;
-  --grey-600: #7c7f87;
-  --blue: #3b5dff;
-  --blue-ink: #1c2b8a;
-  --accent: #f2703c;
-  --accent-soft: #f9b48a;
+  --bg-card: #f4f6fb;
+  --ink: #10131a;
+  --ink-soft: #565b66;
+  --grey-100: #eef1f6;
+  --grey-200: #dfe4ec;
+  --grey-600: #767c88;
+  --blue: #2f5df6;
+  --blue-light: #6f8bff;
+  --blue-deep: #1a2b8a;
+  --blue-tint: #eef2ff;
 
-  --grid-line: rgba(20, 22, 26, 0.06);
+  --grid-line: rgba(20, 22, 26, 0.07);
 
   --radius-sm: 10px;
   --radius-md: 20px;
@@ -122,7 +123,7 @@ main, header, footer { position: relative; z-index: 1; }
   transition: transform 0.35s var(--ease);
 }
 .btn:hover { transform: translateY(-2px); }
-.btn--accent { background: var(--accent); color: #fff; }
+.btn--primary { background: var(--blue); color: #fff; }
 .btn--dark { background: var(--ink); color: #fff; }
 .btn--light { background: #fff; color: var(--ink); }
 
@@ -157,7 +158,7 @@ main, header, footer { position: relative; z-index: 1; }
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--blue));
+  background: linear-gradient(135deg, var(--blue-deep), var(--blue-light));
   display: inline-block;
 }
 .nav__links { display: flex; gap: clamp(0.9rem, 2vw, 1.6rem); }
@@ -187,8 +188,8 @@ main, header, footer { position: relative; z-index: 1; }
   width: 84px;
   height: 84px;
   border-radius: var(--radius-md);
-  background: linear-gradient(160deg, var(--accent), var(--accent-soft));
-  box-shadow: 0 20px 40px -10px rgba(242, 112, 60, 0.55);
+  background: linear-gradient(160deg, var(--blue), var(--blue-light));
+  box-shadow: 0 20px 40px -10px rgba(47, 93, 246, 0.45);
   overflow: hidden;
   margin-bottom: 1.5rem;
 }
@@ -200,11 +201,21 @@ main, header, footer { position: relative; z-index: 1; }
   letter-spacing: -0.02em;
   line-height: 1.08;
 }
+.hero__line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+.hero__line > span {
+  display: inline-block;
+  will-change: transform;
+}
 .hero__actions {
   display: flex;
   gap: 1rem;
   margin-top: 2.25rem;
 }
+.hero__actions .btn { will-change: transform, opacity; }
 
 .hero__video-spacer {
   height: 220vh;
