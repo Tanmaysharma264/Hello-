@@ -314,10 +314,13 @@ main, header, footer { position: relative; z-index: 1; }
   align-items: stretch;
 }
 .journey__stack {
+  /* Height is set in px by journeyLayout.ts to match the experience
+     column exactly — grid stretch / height:100% doesn't reliably
+     resolve here across font-load timing. */
   display: flex;
   flex-direction: column;
   gap: clamp(1.5rem, 3vw, 2.5rem);
-  height: 100%;
+  overflow: hidden;
 }
 .marquee-v {
   flex: 1;

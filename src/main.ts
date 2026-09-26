@@ -8,6 +8,7 @@ import { initAccordion } from "./animations/accordion";
 import { initStackedProjects } from "./animations/stackedProjects";
 import { initRevealHeadings } from "./animations/revealHeadings";
 import { initParallaxGrid } from "./animations/parallaxGrid";
+import { initJourneyLayout } from "./animations/journeyLayout";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,6 +34,7 @@ function init() {
   initStackedProjects();
   initRevealHeadings();
   initParallaxGrid();
+  initJourneyLayout();
 
   // Content is injected dynamically by several modules above (accordion, marquee,
   // stacked projects) — refresh ScrollTrigger once layout has settled.
