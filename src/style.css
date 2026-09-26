@@ -447,10 +447,20 @@ main, header, footer { position: relative; z-index: 1; }
   position: relative;
   margin-top: clamp(4rem, 8vh, 6rem);
   padding: clamp(4rem, 10vh, 7rem) var(--gutter) 0;
-  background: var(--blue-deep);
+  background: linear-gradient(155deg, var(--blue) 0%, var(--blue-light) 60%, var(--blue) 100%);
   color: #fff;
   overflow: hidden;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(42% 32% at 6% -6%, rgba(255, 255, 255, 0.45), transparent 70%),
+    radial-gradient(38% 28% at 100% 104%, rgba(255, 255, 255, 0.3), transparent 70%);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
 }
 .footer__inner {
   max-width: 780px;
