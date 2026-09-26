@@ -2,20 +2,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export function initParallaxGrid() {
-  const lines = document.querySelector<HTMLElement>(".grid-bg__lines");
-  if (!lines) return;
-
-  gsap.to(lines, {
-    yPercent: 8,
-    ease: "none",
-    scrollTrigger: {
-      trigger: document.body,
-      start: "top top",
-      end: "bottom bottom",
-      scrub: 0.8,
-    },
-  });
-
   const journeyPortrait = document.querySelector<HTMLElement>(".journey__portrait");
   if (journeyPortrait) {
     gsap.to(journeyPortrait, {

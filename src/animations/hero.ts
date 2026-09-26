@@ -36,6 +36,11 @@ function initHeroVideoZoom() {
 
   gsap.set(frame, { borderRadius: 32 });
 
+  const naturalSize = () => {
+    const width = Math.min(760, window.innerWidth * 0.84);
+    return { width, height: (width * 9) / 16 };
+  };
+
   ScrollTrigger.create({
     trigger: spacer,
     start: "top top",
@@ -43,8 +48,9 @@ function initHeroVideoZoom() {
     scrub: 0.6,
     onUpdate: (self) => {
       const p = self.progress;
-      const width = gsap.utils.interpolate("86vw", "100vw", p);
-      const height = gsap.utils.interpolate("46vh", "100vh", p);
+      const start = naturalSize();
+      const width = gsap.utils.interpolate(start.width, window.innerWidth, p);
+      const height = gsap.utils.interpolate(start.height, window.innerHeight, p);
       const radius = gsap.utils.interpolate(32, 0, p);
       gsap.set(frame, { width, height, borderRadius: radius });
 
