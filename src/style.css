@@ -456,70 +456,76 @@ main, header, footer { position: relative; z-index: 1; }
 }
 
 /* ==========================================================================
-   Projects & Portfolio (stacked scroll)
+   Projects & Portfolio (stacked sticky cards)
    ========================================================================== */
 .projects { padding: clamp(4rem, 10vh, 8rem) 0; }
 .projects .section-heading { margin-bottom: 2.5rem; }
-.projects__stack {
+.projects__cards {
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 var(--gutter);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(2rem, 4vw, 4rem);
 }
-.projects__media {
+.projects__card {
   position: sticky;
-  top: 120px;
-  height: 62vh;
+  /* top is set per-card in JS so each card locks a little lower than
+     the one before it, fanning the stack as the next card slides up
+     and covers the tail of the previous one. */
+  background: var(--bg-raised);
+  border: 1px solid var(--grid-line);
   border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--grey-100);
+  box-shadow: 0 30px 60px -30px rgba(20, 22, 26, 0.18);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
 }
-.projects__media img {
-  position: absolute;
-  inset: 0;
+.projects__card-media {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+.projects__card-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.6s var(--ease);
+  display: block;
 }
-.projects__media img.is-active { opacity: 1; }
-.projects__list { display: flex; flex-direction: column; }
-.projects__row {
-  padding: clamp(1.75rem, 4vh, 2.75rem) 0;
-  border-bottom: 1px solid var(--grid-line);
-  cursor: pointer;
-  opacity: 0.35;
-  transition: opacity 0.5s var(--ease);
-}
-.projects__row.is-active { opacity: 1; }
-.projects__row-top {
+.projects__card-body {
   display: flex;
-  align-items: baseline;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
+  flex-direction: column;
+  justify-content: center;
 }
-.projects__index { color: var(--grey-600); font-size: 0.85rem; }
-.projects__title {
-  font-size: clamp(1.4rem, 2.6vw, 2rem);
+.projects__card-index { color: var(--grey-600); font-size: 0.85rem; margin-bottom: 0.75rem; }
+.projects__card-title {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
   font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+}
+.projects__card-desc { color: var(--ink-soft); font-size: 0.98rem; line-height: 1.6; max-width: 46ch; }
+.projects__card-list {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.projects__card-list li {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
 }
-.projects__title svg {
-  opacity: 0;
-  transform: translateX(-6px);
-  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+.projects__card-list svg { flex-shrink: 0; color: var(--blue); }
+.projects__card-footer {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--grid-line);
 }
-.projects__row.is-active .projects__title svg { opacity: 1; transform: translateX(0); }
-.projects__desc { color: var(--grey-600); font-size: 0.9rem; max-width: 46ch; }
 
 @media (max-width: 880px) {
-  .projects__stack { grid-template-columns: 1fr; }
-  .projects__media { position: relative; top: 0; height: 42vh; }
+  .projects__card { grid-template-columns: 1fr; position: relative; top: 0 !important; }
 }
 
 /* ==========================================================================
