@@ -544,7 +544,10 @@ main, header, footer { position: relative; z-index: 1; }
 }
 
 @media (max-width: 880px) {
-  .projects__card { grid-template-columns: 1fr; position: relative; top: 0 !important; }
+  /* Image stacks above the text on narrow screens, but position:
+     sticky stays on — same fan-stack scroll animation at every
+     width, per request. */
+  .projects__card { grid-template-columns: 1fr; }
 }
 
 /* ==========================================================================
