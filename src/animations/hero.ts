@@ -61,7 +61,7 @@ function initHeroVideoZoom() {
   ScrollTrigger.create({
     trigger: "#hero",
     start: "top top",
-    end: "+=480%",
+    end: "+=200%",
     pin,
     scrub: 1.2,
     onRefresh: measure,
